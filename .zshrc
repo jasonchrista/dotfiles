@@ -1,145 +1,53 @@
-# If you come from bash you might have to change your $PATH.
+# Homebrew
 if [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-export PATH=$HOME/.local/bin:$HOME/Library/Python/3.7/bin:$HOME/.cargo/bin:$HOME/bin:/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/mysql-client/bin:$PATH
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export PIPENV_VENV_IN_PROJECT=TRUE
+
+# PATH
+typeset -U path PATH
+path=(
+  "$HOME/bin"
+  "$HOME/.cargo/bin"
+  /opt/homebrew/opt/openssl@3/bin
+  /opt/homebrew/opt/mysql-client/bin
+  $path
+)
+export PATH
+
+# Environment
 export RUST_BACKTRACE=1
 
-# This is for the Python package mysqlclient. It won't compile without it.
 if command -v brew >/dev/null 2>&1; then
-  export PKG_CONFIG_PATH="$(brew --prefix mysql-client)/lib/pkgconfig"
+  mysql_client_pkgconfig="$(brew --prefix mysql-client)/lib/pkgconfig"
+  case ":${PKG_CONFIG_PATH:-}:" in
+    *":${mysql_client_pkgconfig}:"*) ;;
+    *) export PKG_CONFIG_PATH="${mysql_client_pkgconfig}${PKG_CONFIG_PATH:+:${PKG_CONFIG_PATH}}" ;;
+  esac
+  unset mysql_client_pkgconfig
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/jason/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
+plugins=(zsh-autosuggestions)
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  # docker
-  # docker-compose
-  # git
-  # npm
-  # pip
-  # pipenv
-  # python
-  # ripgrep
-  # rust
-  # vscode
-  zsh-autosuggestions
-)
-
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
+if [[ -n "${HOMEBREW_PREFIX:-}" && -d "${HOMEBREW_PREFIX}/share/zsh/site-functions" ]]; then
+  FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 fi
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
 alias cat=bat
 alias dig=dog
-alias du="ncdu --color dark -rr"
-alias "df -h"=duff
+alias du="erd -H --disk-usage block --icons --layout flat --no-ignore --no-git --hidden --level 1 --dir-order first --sort rsize"
+alias df=duf
 alias help=tldr
 alias ls="lsd --group-dirs first"
 alias ping="prettyping --nolegend"
 alias top=bpytop
 
-# Add GitHub Copilot CLI aliases ??, git?, and gh? to your shell.
-eval "$(github-copilot-cli alias -- "$0")"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
+# Optional integrations
+[[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
+[[ -f "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
+[[ -f "$HOME/.vite-plus/env" ]] && source "$HOME/.vite-plus/env"
