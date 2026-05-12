@@ -1,14 +1,16 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/Library/Python/3.7/bin:$HOME/.cargo/bin:$HOME/bin:/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/mysql-client/bin:/opt/homebrew/opt/mysql-client/lib:$PATH
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+export PATH=$HOME/.local/bin:$HOME/Library/Python/3.7/bin:$HOME/.cargo/bin:$HOME/bin:/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/mysql-client/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export PIPENV_VENV_IN_PROJECT=TRUE
-export NVM_DIR="$HOME/.nvm"
 export RUST_BACKTRACE=1
 
 # This is for the Python package mysqlclient. It won't compile without it.
-export PKG_CONFIG_PATH="$(brew --prefix mysql-client)/lib/pkgconfig"
+if command -v brew >/dev/null 2>&1; then
+  export PKG_CONFIG_PATH="$(brew --prefix mysql-client)/lib/pkgconfig"
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jason/.oh-my-zsh"
@@ -126,6 +128,7 @@ source $ZSH/oh-my-zsh.sh
 alias cat=bat
 alias dig=dog
 alias du="ncdu --color dark -rr"
+alias "df -h"=duff
 alias help=tldr
 alias ls="lsd --group-dirs first"
 alias ping="prettyping --nolegend"
@@ -136,13 +139,7 @@ eval "$(github-copilot-cli alias -- "$0")"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 # Vite+ bin (https://viteplus.dev)
 . "$HOME/.vite-plus/env"
