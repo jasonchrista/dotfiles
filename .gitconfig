@@ -1,0 +1,26 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Jason Christa
+	email = jason@zeitcode.com
+[core]
+	excludesfile = /Users/jason/.gitignore_global
+[diff]
+    tool = vscode
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[commit]
+	template = /Users/jason/.stCommitMsg
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
