@@ -145,8 +145,6 @@ mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 # Remote desktop client for Windows PCs.
 mas "Microsoft Remote Desktop", id: 1295203466
-# Task list and reminders app from Microsoft.
-mas "Microsoft To Do", id: 1274495053
 # Word processor from Microsoft Office.
 mas "Microsoft Word", id: 462054704
 # ASCII art and diagram editor.
@@ -186,7 +184,6 @@ mas "Xcode", id: 497799835
 # - Crunchyroll
 # - Disney+
 # - HBO Max
-# - Hulu
 # - Monarch
 # - Netflix
 # - Paramount+
