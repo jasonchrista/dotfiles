@@ -79,6 +79,10 @@ cask "betterdisplay"
 cask "beyond-compare"
 # Screen capturing tool
 cask "cleanshot"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Collaborative team software
