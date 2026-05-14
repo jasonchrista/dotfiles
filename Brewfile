@@ -24,6 +24,10 @@ brew "git"
 brew "imagemagick"
 # Handy way to save and run project-specific commands
 brew "just"
+# Portable Foreign Function Interface library
+brew "libffi"
+# C XSLT library for GNOME
+brew "libxslt"
 # Count lines of code quickly
 brew "loc"
 # Clone of ls with colorful output, file type icons, and more
