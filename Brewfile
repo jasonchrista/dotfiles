@@ -83,8 +83,6 @@ cask "cleanshot"
 cask "codex"
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
-# Replacement for Docker Desktop
-cask "orbstack"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -116,6 +114,8 @@ cask "navicat-premium"
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
 cask "notion"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Podcast platform
 cask "pocket-casts"
 # Music streaming service
