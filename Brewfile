@@ -83,8 +83,8 @@ cask "cleanshot"
 cask "codex"
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Collaborative team software
 cask "figma"
 # Web browser
