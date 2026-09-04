@@ -8,8 +8,6 @@ brew "dog"
 brew "dua-cli"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
-# Global DNS propagation checker that gives pretty output
-brew "dug"
 # Multi-threaded file-tree visualizer and disk usage analyzer
 brew "erdtree"
 # Simple, fast and user-friendly alternative to find
@@ -26,8 +24,6 @@ brew "imagemagick"
 brew "just"
 # Portable Foreign Function Interface library
 brew "libffi"
-# C XSLT library for GNOME
-brew "libxslt"
 # Count lines of code quickly
 brew "loc"
 # Clone of ls with colorful output, file type icons, and more
@@ -65,8 +61,6 @@ cask "alt-tab"
 cask "android-commandlinetools"
 # Android SDK component
 cask "android-platform-tools"
-# Tools for building Android applications
-cask "android-studio"
 # Grocery shopping list
 cask "anylist"
 # Application uninstaller
