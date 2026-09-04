@@ -77,6 +77,8 @@ cask "bartender"
 cask "betterdisplay"
 # Compare files and folders
 cask "beyond-compare"
+# 3D creation suite
+cask "blender"
 # Screen capturing tool
 cask "cleanshot"
 # OpenAI's coding agent that runs in your terminal
@@ -165,8 +167,6 @@ mas "NewTerminalHere", id: 1067646949
 mas "Next Meeting", id: 1017470484
 # Microsoft cloud file sync client.
 mas "OneDrive", id: 823766827
-# VPN client for WireGuard tunnels.
-mas "WireGuard", id: 1451685025
 # Apple's IDE and developer toolchain.
 mas "Xcode", id: 497799835
 
