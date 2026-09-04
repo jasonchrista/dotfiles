@@ -61,6 +61,8 @@ cask "1password-cli"
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
+# Command-line tools for building and debugging Android apps
+cask "android-commandlinetools"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for building Android applications
