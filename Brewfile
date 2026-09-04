@@ -75,12 +75,12 @@ cask "betterdisplay"
 cask "beyond-compare"
 # 3D creation suite
 cask "blender"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Screen capturing tool
 cask "cleanshot"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# OpenAI's Codex desktop app for managing coding agents
-cask "codex-app"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -196,5 +196,5 @@ mas "Xcode", id: 497799835
 
 # Docker images
 # - postgres:17.8
-# - mysql/mysql-server:8.0
+# - mysql/mysql-server:8.4
 # - redis:4
