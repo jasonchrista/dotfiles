@@ -67,8 +67,6 @@ cask "android-platform-tools"
 cask "anylist"
 # Application uninstaller
 cask "appcleaner"
-# User-friendly GUI app for Homebrew
-cask "applite"
 # Menu bar icon organiser
 cask "bartender"
 # Display management tool
@@ -172,6 +170,18 @@ mas "OneDrive", id: 823766827
 # Apple's IDE and developer toolchain.
 mas "Xcode", id: 497799835
 
+# Configuration frameworks
+# - Oh My Zsh
+
+# Language Toolchains
+# - Vite+ (JavaScript and Node.js)
+# - uv (Python)
+
+# Docker images
+# - postgres:17.8
+# - mysql/mysql-server:8.4
+# - redis:4
+
 # Chrome web apps
 # - Google Maps
 # - Google Photos
@@ -199,12 +209,3 @@ mas "Xcode", id: 497799835
 # - Paramount+
 # - Peacock
 # - STARZ
-
-# Language Toolchains
-# - Vite+ (JavaScript and Node.js)
-# - uv (Python)
-
-# Docker images
-# - postgres:17.8
-# - mysql/mysql-server:8.4
-# - redis:4
