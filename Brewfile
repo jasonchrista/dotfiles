@@ -96,12 +96,12 @@ cask "jettison"
 cask "kaleidoscope"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
 # Explorer for Azure Storage
 cask "microsoft-azure-storage-explorer"
 # Multi-platform web browser
 cask "microsoft-edge"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Database administration and development tool
