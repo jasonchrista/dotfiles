@@ -38,8 +38,6 @@ brew "p7zip"
 brew "pkgconf"
 # Wrapper to colorize and simplify ping's output
 brew "prettyping"
-# Command-line interface for Render
-brew "render"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Intuitive find & replace CLI
