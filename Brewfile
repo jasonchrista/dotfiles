@@ -34,6 +34,8 @@ brew "mas"
 brew "mysql-client"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Wrapper to colorize and simplify ping's output
 brew "prettyping"
 # Search tool like grep and The Silver Searcher
