@@ -38,6 +38,8 @@ brew "p7zip"
 brew "pkgconf"
 # Wrapper to colorize and simplify ping's output
 brew "prettyping"
+# Command-line interface for Render
+brew "render"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Intuitive find & replace CLI
@@ -104,6 +106,8 @@ cask "kaleidoscope"
 cask "keyboardcleantool"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
+# Explorer for Azure Storage
+cask "microsoft-azure-storage-explorer"
 # Multi-platform web browser
 cask "microsoft-edge"
 # Meet, chat, call, and collaborate in just one place
@@ -122,6 +126,8 @@ cask "pocket-casts"
 cask "spotify"
 # Backup, recovery and cloning software
 cask "superduper"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
 # Git client focusing on power and productivity
 cask "tower"
 # Open-source BitTorrent client
@@ -195,6 +201,10 @@ mas "Xcode", id: 497799835
 # - Paramount+
 # - Peacock
 # - STARZ
+
+# Language Toolchains
+# - Vite+ (JavaScript and Node.js)
+# - uv (Python)
 
 # Docker images
 # - postgres:17.8
