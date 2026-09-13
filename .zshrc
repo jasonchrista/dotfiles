@@ -42,12 +42,13 @@ source "$ZSH/oh-my-zsh.sh"
 # Aliases
 alias cat=bat
 alias dig=dog
-alias du="erd -H --disk-usage block --icons --layout flat --no-ignore --no-git --hidden --level 1 --dir-order first --sort rsize"
+alias du="erd -H --unit si --disk-usage physical --icons --layout flat --no-ignore --no-git --hidden --level 1 --dir-order first --sort rsize"
 alias df=duf
 alias help=tldr
 alias ls="lsd --group-dirs first"
 alias ping="prettyping --nolegend"
 alias top=bpytop
+alias upall="uv self update && vp upgrade && omz update && brew upgrade --formula --no-ask && brew cleanup && tldr --update"
 
 # Optional integrations
 [[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
