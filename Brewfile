@@ -4,8 +4,6 @@ brew "bat"
 brew "bpytop"
 # Command-line DNS client
 brew "dog"
-# View disk space usage and delete unwanted data, fast
-brew "dua-cli"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
 # Multi-threaded file-tree visualizer and disk usage analyzer
