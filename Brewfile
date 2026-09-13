@@ -90,8 +90,6 @@ cask "font-hack-nerd-font"
 cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# JetBrains tools manager
-cask "jetbrains-toolbox"
 # Automatically ejects external drives
 cask "jettison"
 # Spot and merge differences in text and image files or folders
@@ -116,6 +114,8 @@ cask "notion"
 cask "orbstack"
 # Podcast platform
 cask "pocket-casts"
+# IDE for professional Python development
+cask "pycharm"
 # Music streaming service
 cask "spotify"
 # Backup, recovery and cloning software
