@@ -47,7 +47,7 @@ alias df=duf
 alias help=tldr
 alias ls="lsd --group-dirs first"
 alias ping="prettyping --nolegend"
-alias top=bpytop
+alias top=btm
 alias upall="uv self update && vp upgrade && omz update && brew upgrade --formula --no-ask && brew cleanup && tldr --update"
 
 # Optional integrations

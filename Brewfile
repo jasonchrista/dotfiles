@@ -1,7 +1,7 @@
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Linux/OSX/FreeBSD resource monitor
-brew "bpytop"
+# Cross-platform graphical process/system monitor
+brew "bottom"
 # Command-line DNS client
 brew "dog"
 # Disk Usage/Free Utility - a better 'df' alternative

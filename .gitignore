@@ -1,4 +1,7 @@
 *
+!/.config/
+!/.config/bottom/
+!/.config/bottom/bottom.toml
 !/.gitignore
 !/Brewfile
 !/.zshrc

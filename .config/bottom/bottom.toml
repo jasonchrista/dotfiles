@@ -1,0 +1,57 @@
+[flags]
+rate = "2s"
+default_time_value = "60s"
+show_table_scroll_position = true
+show_table_scroll_bar = true
+table_gap = "line"
+
+[processes]
+default_sort = "CPU%"
+sort_order = "Descending"
+default_memory_value = true
+unnormalized_cpu = true
+
+[cpu]
+default = "all"
+show_decimal = true
+
+[memory_graph]
+legend_position = "top-right"
+
+[network_graph]
+legend_position = "top-right"
+use_bytes = true
+use_binary_prefix = true
+
+[disk]
+columns = ["Disk", "Mount", "Used", "Free", "Total", "Used%"]
+
+[[row]]
+ratio = 45
+
+[[row.child]]
+ratio = 2
+type = "cpu"
+
+[[row.child]]
+ratio = 1
+
+[[row.child.child]]
+ratio = 2
+type = "mem"
+
+[[row.child.child]]
+ratio = 1
+type = "disk"
+
+[[row]]
+ratio = 55
+
+[[row.child]]
+ratio = 1
+type = "net"
+
+[[row.child]]
+ratio = 2
+type = "proc"
+default = true
