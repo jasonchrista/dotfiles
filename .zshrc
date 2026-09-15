@@ -48,7 +48,9 @@ alias help=tldr
 alias ls="lsd --group-dirs first"
 alias ping="prettyping --nolegend"
 alias top=btm
-alias upall="uv self update && vp upgrade && omz update && brew upgrade --formula --no-ask && brew cleanup && tldr --update"
+
+# Commands
+[[ -r "$HOME/.config/zsh/upall.zsh" ]] && source "$HOME/.config/zsh/upall.zsh"
 
 # Optional integrations
 [[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
