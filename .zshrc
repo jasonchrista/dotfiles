@@ -50,6 +50,7 @@ alias ping="prettyping --nolegend"
 alias top=btm
 
 # Commands
+unalias upall 2>/dev/null || :
 [[ -r "$HOME/.config/zsh/upall.zsh" ]] && source "$HOME/.config/zsh/upall.zsh"
 
 # Optional integrations
