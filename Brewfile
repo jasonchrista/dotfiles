@@ -84,7 +84,6 @@ cask "figma"
 # Web browser
 cask "firefox"
 # Fonts
-cask "font-fontawesome"
 cask "font-hack-nerd-font"
 # Web browser
 cask "google-chrome"

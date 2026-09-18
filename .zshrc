@@ -17,6 +17,7 @@ export PATH
 # Environment
 export RUST_BACKTRACE=1
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 [[ -r "$HOME/.config/shell/secrets.zsh" ]] && source "$HOME/.config/shell/secrets.zsh"
 
 if command -v brew >/dev/null 2>&1; then
