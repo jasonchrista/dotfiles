@@ -46,6 +46,10 @@ brew "tidy-viewer"
 brew "tldr"
 # Lightweight BitTorrent client
 brew "transmission-cli"
+# Extremely fast Python package and project manager
+brew "uv"
+# Unified toolchain and entry point for web development
+brew "vite-plus"
 # UNIX shell (command interpreter)
 brew "zsh"
 
@@ -170,10 +174,6 @@ mas "Xcode", id: 497799835
 # Configuration frameworks
 # - Oh My Zsh
 
-# Language Toolchains
-# - Vite+ (JavaScript and Node.js)
-# - uv (Python)
-
 # Docker images
 # - postgres:17.8
 # - mysql/mysql-server:8.4
@@ -193,7 +193,6 @@ mas "Xcode", id: 497799835
 # - Bluesky
 # - Facebook
 # - Feedly
-# - Google AI Studio
 # - Threads
 # - X
 
