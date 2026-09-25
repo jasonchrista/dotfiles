@@ -6,16 +6,13 @@ fi
 # PATH
 typeset -U path PATH
 path=(
-  "$HOME/.cargo/bin"
   "$HOME/.local/bin"
-  /opt/homebrew/opt/openssl@3/bin
-  /opt/homebrew/opt/mysql-client/bin
+  "${HOMEBREW_PREFIX}/opt/mysql-client/bin"
   $path
 )
 export PATH
 
 # Environment
-export RUST_BACKTRACE=1
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 [[ -r "$HOME/.config/shell/secrets.zsh" ]] && source "$HOME/.config/shell/secrets.zsh"
