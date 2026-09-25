@@ -52,6 +52,8 @@ unalias upall 2>/dev/null || :
 [[ -r "$HOME/.config/zsh/upall.zsh" ]] && source "$HOME/.config/zsh/upall.zsh"
 
 # Optional integrations
-[[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
 [[ -f "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 [[ -f "$HOME/.vite-plus/env" ]] && source "$HOME/.vite-plus/env"
