@@ -4,7 +4,7 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 fi
 
 # PATH
-typeset -U path PATH
+typeset -U path PATH fpath FPATH
 path=(
   "$HOME/.local/bin"
   "${HOMEBREW_PREFIX}/opt/mysql-client/bin"
@@ -17,23 +17,19 @@ export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 [[ -r "$HOME/.config/shell/secrets.zsh" ]] && source "$HOME/.config/shell/secrets.zsh"
 
-if command -v brew >/dev/null 2>&1; then
-  mysql_client_pkgconfig="$(brew --prefix mysql-client)/lib/pkgconfig"
+mysql_client_pkgconfig="${HOMEBREW_PREFIX:-}/opt/mysql-client/lib/pkgconfig"
+if [[ -n "${HOMEBREW_PREFIX:-}" && -d "$mysql_client_pkgconfig" ]]; then
   case ":${PKG_CONFIG_PATH:-}:" in
     *":${mysql_client_pkgconfig}:"*) ;;
     *) export PKG_CONFIG_PATH="${mysql_client_pkgconfig}${PKG_CONFIG_PATH:+:${PKG_CONFIG_PATH}}" ;;
   esac
-  unset mysql_client_pkgconfig
 fi
+unset mysql_client_pkgconfig
 
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
 plugins=(zsh-autosuggestions)
-
-if [[ -n "${HOMEBREW_PREFIX:-}" && -d "${HOMEBREW_PREFIX}/share/zsh/site-functions" ]]; then
-  FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
-fi
 
 source "$ZSH/oh-my-zsh.sh"
 
