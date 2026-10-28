@@ -14,6 +14,8 @@ brew "fd"
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Distributed revision control system
 brew "git"
 # Tools and libraries to manipulate images in select formats
@@ -42,8 +44,8 @@ brew "ripgrep"
 brew "sd"
 # CLI csv pretty printer
 brew "tidy-viewer"
-# Simplified and community-driven man pages
-brew "tldr"
+# Official tldr client written in Rust
+brew "tlrc"
 # Lightweight BitTorrent client
 brew "transmission-cli"
 # Extremely fast Python package and project manager
@@ -91,6 +93,8 @@ cask "firefox"
 cask "font-hack-nerd-font"
 # Web browser
 cask "google-chrome"
+# Homebrew's official GUI
+cask "homebrew-app"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Automatically ejects external drives
