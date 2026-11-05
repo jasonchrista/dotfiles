@@ -1,3 +1,5 @@
+tap "voidzero-dev/vite-plus", "https://github.com/voidzero-dev/vite-plus"
+
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Cross-platform graphical process/system monitor
@@ -50,8 +52,8 @@ brew "tlrc"
 brew "transmission-cli"
 # Extremely fast Python package and project manager
 brew "uv"
-# Unified toolchain and entry point for web development
-brew "vite-plus"
+# Native launcher for the unified web development toolchain
+brew "voidzero-dev/vite-plus/vp"
 # UNIX shell (command interpreter)
 brew "zsh"
 
