@@ -42,7 +42,7 @@ alias help=tldr
 alias ls="lsd --group-dirs first"
 alias ping="prettyping --nolegend"
 alias top=btm
-alias upall='brew upgrade --formula --no-ask && vp --version >/dev/null && brew cleanup && omz update'
+alias upall='brew upgrade --formula --no-ask && brew cleanup && omz update'
 
 # Optional integrations
 if command -v fzf >/dev/null 2>&1; then
